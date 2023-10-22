@@ -13,7 +13,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .orange
         
-        var url: URL = URL(string: "https://rickandmortyapi.com/api/character")!
+        let url: URL = URL(string: "https://rickandmortyapi.com/api/character")!
         URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
             guard
                 let data,
@@ -21,7 +21,7 @@ class ViewController: UIViewController {
             else { return }
             let decoder = JSONDecoder()
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-            var model = try! decoder.decode(CharactersDTO.self, from: data)
+            let model = try! decoder.decode(CharactersDTO.self, from: data)
             print(model)
         }).resume()
     

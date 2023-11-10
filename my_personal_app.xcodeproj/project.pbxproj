@@ -12,6 +12,10 @@
 		460566832AD2C2030089F421 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460566822AD2C2030089F421 /* ViewController.swift */; };
 		460566882AD2C2030089F421 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 460566872AD2C2030089F421 /* Assets.xcassets */; };
 		4605668B2AD2C2030089F421 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 460566892AD2C2030089F421 /* LaunchScreen.storyboard */; };
+		4656D1162AFEA7DC005C72C9 /* CharacterDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656D1152AFEA7DC005C72C9 /* CharacterDTO.swift */; };
+		4656D1182AFEA7FE005C72C9 /* CharactersDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656D1172AFEA7FE005C72C9 /* CharactersDTO.swift */; };
+		4656D11A2AFEA816005C72C9 /* InformationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656D1192AFEA816005C72C9 /* InformationDTO.swift */; };
+		4656D11C2AFEB206005C72C9 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656D11B2AFEB206005C72C9 /* CharacterService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		460566872AD2C2030089F421 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4605668A2AD2C2030089F421 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4605668C2AD2C2030089F421 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4656D1152AFEA7DC005C72C9 /* CharacterDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDTO.swift; sourceTree = "<group>"; };
+		4656D1172AFEA7FE005C72C9 /* CharactersDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersDTO.swift; sourceTree = "<group>"; };
+		4656D1192AFEA816005C72C9 /* InformationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationDTO.swift; sourceTree = "<group>"; };
+		4656D11B2AFEB206005C72C9 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +62,26 @@
 		4605667D2AD2C2030089F421 /* my_personal_app */ = {
 			isa = PBXGroup;
 			children = (
+				4656D1142AFEA7BD005C72C9 /* CharacterTable */,
 				4605667E2AD2C2030089F421 /* AppDelegate.swift */,
 				460566802AD2C2030089F421 /* SceneDelegate.swift */,
-				460566822AD2C2030089F421 /* ViewController.swift */,
 				460566872AD2C2030089F421 /* Assets.xcassets */,
 				460566892AD2C2030089F421 /* LaunchScreen.storyboard */,
 				4605668C2AD2C2030089F421 /* Info.plist */,
 			);
 			path = my_personal_app;
+			sourceTree = "<group>";
+		};
+		4656D1142AFEA7BD005C72C9 /* CharacterTable */ = {
+			isa = PBXGroup;
+			children = (
+				460566822AD2C2030089F421 /* ViewController.swift */,
+				4656D1152AFEA7DC005C72C9 /* CharacterDTO.swift */,
+				4656D1172AFEA7FE005C72C9 /* CharactersDTO.swift */,
+				4656D1192AFEA816005C72C9 /* InformationDTO.swift */,
+				4656D11B2AFEB206005C72C9 /* CharacterService.swift */,
+			);
+			path = CharacterTable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,8 +154,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4656D11A2AFEA816005C72C9 /* InformationDTO.swift in Sources */,
 				460566832AD2C2030089F421 /* ViewController.swift in Sources */,
+				4656D11C2AFEB206005C72C9 /* CharacterService.swift in Sources */,
+				4656D1162AFEA7DC005C72C9 /* CharacterDTO.swift in Sources */,
 				4605667F2AD2C2030089F421 /* AppDelegate.swift in Sources */,
+				4656D1182AFEA7FE005C72C9 /* CharactersDTO.swift in Sources */,
 				460566812AD2C2030089F421 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

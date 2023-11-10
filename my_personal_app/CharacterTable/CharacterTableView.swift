@@ -12,12 +12,13 @@ final class CharacterTableView: UIView {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
-        tableView.backgroundColor = .systemPink
-//        tableView.dataSource = self
+        tableView.backgroundColor = .systemBrown
+        tableView.dataSource = tableManager
         return tableView
     }()
     
     private lazy var spinnerView = UIActivityIndicatorView(style: .large)
+    private lazy var tableManager = CharacterTableManager()
     
     init() {
         super.init(frame: .zero)
@@ -29,6 +30,12 @@ final class CharacterTableView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(with viewModel: [CharacterDTO]) -> Void {
+        tableManager.tableData = viewModel
+        spinnerView.stopAnimating()
+        tableView.reloadData()
     }
     
 }

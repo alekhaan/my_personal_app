@@ -9,7 +9,12 @@ import Foundation
 
 final class CharacterService {
     
-    let decoder = JSONDecoder()
+    var decoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }()
+    
     let session: URLSession = {
         let sessionConfiguration = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfiguration)
@@ -23,9 +28,7 @@ final class CharacterService {
                 let data,
                 error == nil
             else { return }
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let jsonData = try! decoder.decode(CharactersDTO.self, from: data)
+            let jsonData = try! self.decoder.decode(CharactersDTO.self, from: data)
             let charactersData = jsonData.results
             comletionHandler(charactersData)
         }).resume()

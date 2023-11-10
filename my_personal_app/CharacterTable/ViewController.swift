@@ -45,41 +45,7 @@ final class ViewController: UIViewController, UITableViewDataSource {
             tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
         ])
-        
-        let url: URL = URL(string: "https://rickandmortyapi.com/api/character")!
-        URLSession.shared.dataTask(with: url, completionHandler: { data, response, error in
-            guard
-                let data,
-                error == nil
-            else { return }
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let jsonData = try! decoder.decode(CharactersDTO.self, from: data)
-            self.charactersData = jsonData.results
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }).resume()
     
     }
     
-}
-
-struct CharacterDTO: Decodable {
-    let name: String
-    let status: String
-    let species: String
-    let image: URL
-}
-
-struct InformationDTO: Decodable {
-    let count: Int
-    let pages: Int
-    let next: URL?
-    let prev: URL?
-}
-
-struct CharactersDTO: Decodable {
-    let info: InformationDTO
-    let results: [CharacterDTO]
 }

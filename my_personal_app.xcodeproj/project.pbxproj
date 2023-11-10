@@ -18,6 +18,7 @@
 		4656D11C2AFEB206005C72C9 /* CharacterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656D11B2AFEB206005C72C9 /* CharacterService.swift */; };
 		4656D11E2AFEB8E1005C72C9 /* CharacterTableManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656D11D2AFEB8E1005C72C9 /* CharacterTableManager.swift */; };
 		4656D1202AFEBB8F005C72C9 /* CharacterTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656D11F2AFEBB8F005C72C9 /* CharacterTableView.swift */; };
+		4656D1222AFEC6A0005C72C9 /* CharacterTableViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656D1212AFEC6A0005C72C9 /* CharacterTableViewControllerFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		4656D11B2AFEB206005C72C9 /* CharacterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterService.swift; sourceTree = "<group>"; };
 		4656D11D2AFEB8E1005C72C9 /* CharacterTableManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableManager.swift; sourceTree = "<group>"; };
 		4656D11F2AFEBB8F005C72C9 /* CharacterTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableView.swift; sourceTree = "<group>"; };
+		4656D1212AFEC6A0005C72C9 /* CharacterTableViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterTableViewControllerFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				4656D11F2AFEBB8F005C72C9 /* CharacterTableView.swift */,
 				460566822AD2C2030089F421 /* CharacterTableViewController.swift */,
 				4656D11D2AFEB8E1005C72C9 /* CharacterTableManager.swift */,
+				4656D1212AFEC6A0005C72C9 /* CharacterTableViewControllerFactory.swift */,
 			);
 			path = CharacterTable;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				4656D11C2AFEB206005C72C9 /* CharacterService.swift in Sources */,
 				4656D1162AFEA7DC005C72C9 /* CharacterDTO.swift in Sources */,
 				4605667F2AD2C2030089F421 /* AppDelegate.swift in Sources */,
+				4656D1222AFEC6A0005C72C9 /* CharacterTableViewControllerFactory.swift in Sources */,
 				4656D1182AFEA7FE005C72C9 /* CharactersDTO.swift in Sources */,
 				4656D11E2AFEB8E1005C72C9 /* CharacterTableManager.swift in Sources */,
 				460566812AD2C2030089F421 /* SceneDelegate.swift in Sources */,

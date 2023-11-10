@@ -7,6 +7,10 @@
 
 import Foundation
 
+protocol CharacterServicing {
+    func fetchCharacter(comletionHandler: @escaping ([CharacterDTO]) -> Void)
+}
+
 final class CharacterService {
     
     var decoder: JSONDecoder = {
@@ -21,6 +25,12 @@ final class CharacterService {
         return session
     }()
     
+}
+
+// MARK: - CharacterServicing
+
+extension CharacterService: CharacterServicing {
+
     func fetchCharacter(comletionHandler: @escaping ([CharacterDTO]) -> Void) {
         let url: URL = URL(string: "https://rickandmortyapi.com/api/character")!
         session.dataTask(with: url, completionHandler: { data, response, error in

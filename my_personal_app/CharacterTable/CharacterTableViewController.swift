@@ -15,7 +15,16 @@ final class CharacterTableViewController: UIViewController {
         return view
     }()
     
-    private let service = CharacterService()
+    private let service: CharacterServicing
+    
+    init(service: CharacterServicing) {
+        self.service = service
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func loadView() {
         view = contentView

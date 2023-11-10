@@ -7,31 +7,14 @@
 
 import UIKit
 
-final class ViewController: UIViewController, UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        charactersData.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let character = charactersData[indexPath.row]
-        var cell = UITableViewCell()
-        var configuration = cell.defaultContentConfiguration()
-        configuration.image = UIImage()
-        configuration.text = character.name
-        configuration.secondaryText = character.status + " " + character.species
-        cell.contentConfiguration = configuration
-        return cell
-    }
+final class ViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .systemPink
-        tableView.dataSource = self
+//        tableView.dataSource = self
         return tableView
     }()
-    
-    private var charactersData: [CharacterDTO] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()

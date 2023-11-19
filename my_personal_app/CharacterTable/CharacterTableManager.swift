@@ -8,7 +8,14 @@
 import Foundation
 import UIKit
 
+//MARK: - CharacterTableManagerDelegate
+
+protocol CharacterTableManagerDelegate {
+    func didSelectRow(_ characterModel: CharacterDTO) -> Void
+}
+
 final class CharacterTableManager: NSObject {
+    var delegate: CharacterTableManagerDelegate?
     var tableData: [CharacterDTO] = []
 }
 
@@ -31,4 +38,12 @@ extension CharacterTableManager: UITableViewDataSource {
         return cell
     }
     
+}
+
+extension CharacterTableManager: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let characterModel = tableData[indexPath.row]
+        delegate?.didSelectRow(characterModel)
+    }
 }

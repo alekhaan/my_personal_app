@@ -44,6 +44,8 @@ final class CharacterTableViewController: UIViewController {
 
 extension CharacterTableViewController: CharacterTableViewDelegate {
     func didSelectRow(_ characterModel: CharacterDTO) {
-
+        let vc = CharacterDetailsViewController()
+        vc.characterModel = characterModel
+        present(vc, animated: true)
     }
 }

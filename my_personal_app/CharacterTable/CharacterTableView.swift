@@ -8,17 +8,24 @@
 import Foundation
 import UIKit
 
+protocol CharacterTableViewDelegate {
+    func didSelectRow(_ characterModel: CharacterDTO) -> Void
+}
+
+
 final class CharacterTableView: UIView {
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .systemBrown
         tableView.dataSource = tableManager
+        tableView.delegate = tableManager
         return tableView
     }()
     
     private lazy var spinnerView = UIActivityIndicatorView(style: .large)
     private lazy var tableManager = CharacterTableManager()
+    var delegate: CharacterTableViewDelegate?
     
     init() {
         super.init(frame: .zero)
@@ -26,6 +33,7 @@ final class CharacterTableView: UIView {
         addSubviews()
         makeConstraints()
         spinnerView.startAnimating()
+        tableManager.delegate = self
     }
     
     required init?(coder: NSCoder) {
@@ -38,6 +46,14 @@ final class CharacterTableView: UIView {
         tableView.reloadData()
     }
     
+}
+
+// MARK: - CharacterTableManagerDelegate
+
+extension CharacterTableView: CharacterTableManagerDelegate {
+    func didSelectRow(_ characterModel: CharacterDTO) {
+        delegate?.didSelectRow(characterModel)
+    }
 }
 
 // MARK: -Private

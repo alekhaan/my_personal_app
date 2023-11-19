@@ -12,6 +12,7 @@ final class CharacterTableViewController: UIViewController {
     
     private lazy var contentView: CharacterTableView = {
         let view = CharacterTableView()
+        view.delegate = self
         return view
     }()
     
@@ -39,4 +40,12 @@ final class CharacterTableViewController: UIViewController {
         }
     }
     
+}
+
+extension CharacterTableViewController: CharacterTableViewDelegate {
+    func didSelectRow(_ characterModel: CharacterDTO) {
+        let vc = CharacterDetailsViewController()
+        vc.characterModel = characterModel
+        present(vc, animated: true)
+    }
 }
